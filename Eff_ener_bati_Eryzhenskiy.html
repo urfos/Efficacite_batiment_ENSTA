@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="Eff_ener_bati_Eryzhenskiy_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Eff_ener_bati_Eryzhenskiy_files/libs/quarto-html/tabby.min.js"></script>
+<script src="Eff_ener_bati_Eryzhenskiy_files/libs/quarto-html/popper.min.js"></script>
+<script src="Eff_ener_bati_Eryzhenskiy_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="Eff_ener_bati_Eryzhenskiy_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Eff_ener_bati_Eryzhenskiy_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="Eff_ener_bati_Eryzhenskiy_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.37">
+
+  <meta name="author" content="Ilya Eryzhenskiy, Institut des politiques publiques">
+  <title>Efficacité énergétique &amp; bâtiment</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="Eff_ener_bati_Eryzhenskiy_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="Eff_ener_bati_Eryzhenskiy_files/libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="Eff_ener_bati_Eryzhenskiy_files/libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
+  <link href="Eff_ener_bati_Eryzhenskiy_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="Eff_ener_bati_Eryzhenskiy_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="Eff_ener_bati_Eryzhenskiy_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="Eff_ener_bati_Eryzhenskiy_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="Eff_ener_bati_Eryzhenskiy_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="Eff_ener_bati_Eryzhenskiy_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Efficacité énergétique &amp; bâtiment</h1>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Ilya Eryzhenskiy, Institut des politiques publiques 
+</div>
+</div>
+</div>
+
+</section>
+<section id="scope-du-cours" class="slide level2">
+<h2>Scope du cours</h2>
+<p>Aspects <strong>économiques</strong> du sujet de l’<span style="color: blue;">efficacité énergétique</span> appliqué au secteur du <span style="color: blue;">logement</span> :</p>
+<ul>
+<li class="fragment">comportement des ménages</li>
+<li class="fragment">difficultés d’évaluation d’un projet de rénovation</li>
+</ul>
+<div class="fragment">
+<p>…et pas (ou très peu) les questions <strong>techniques</strong> au cœur du sujet :</p>
+<ul>
+<li class="fragment">technologies</li>
+<li class="fragment">matériaux</li>
+</ul>
+</div>
+</section>
+<section>
+<section id="énergie-émissions-la-place-le-secteur-bâtimentrésidentiel" class="title-slide slide level1 center">
+<h1>Énergie, émissions : la place le secteur bâtiment/résidentiel</h1>
+
+</section>
+<section id="consommation-par-secteur-monde" class="slide level2">
+<h2>Consommation par secteur, monde</h2>
+<div class="quarto-layout-panel" data-layout="[50, 50]">
+<div class="quarto-layout-row">
+<div id="first-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="graph/share-of-electricity-final-consumption-by-sector-2019.png"></p>
+<figcaption>Consommation électricité</figcaption>
+</figure>
+</div>
+</div>
+<div id="second-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="graph/share-of-natural-gas-final-consumption-by-sector-2019.png"></p>
+<figcaption>Consommation gaz naturel</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>Données : International Energy Agency, 2019</p>
+</section>
+<section id="consommation-par-secteur-france" class="slide level2">
+<h2>Consommation par secteur – France</h2>
+
+<img data-src="graph/ener_sect_1122_France.png" style="width:85.0%" class="r-stretch quarto-figure-center"><p class="caption">En France, part résidentiel &gt; part industrie ; part résidentiel monte pendant COVID</p></section>
+<section id="énergies-consommées-résidentiel" class="slide level2">
+<h2>Énergies consommées, résidentiel</h2>
+
+<img data-src="graph/consommation-finale-energie-residentiel-cgdd.svg" style="width:60.0%" class="r-stretch"><p>Part croissante de l’électricité, mais pétrole + gaz ~50% en 2021</p>
+</section>
+<section id="emissions-secteur-région" class="slide level2">
+<h2>Emissions – secteur, région</h2>
+
+<!-- ## Leviers d'action : cadre SER de Négawatt -->
+<!-- ::: {layout="[50, 50]"} -->
+<!-- <div> -->
+<!-- *Sufficiency*, **Efficiency**, *Renewables* : -->
+<!-- -   *Sufficiency* $\sim$ sobriété -->
+<!-- -   *Efficiency* -- notre sujet aujourd'hui -->
+<!-- -   *Renewables* -->
+<!-- </div> -->
+<!-- <div> -->
+<!-- ![Source : Saheb (2021)](graph/IPCC_AR6_WGIII_Box_9_1_Figure_1.png){width="80%"} -->
+<!-- </div> -->
+<!-- ::: -->
+<img data-src="graph/origine-emissions-CO2-CGDD-3.svg" class="r-stretch quarto-figure-center"><p class="caption"><strong>ATTENTION</strong> que la consommation finale du secteur <span class="math inline">\(\Rightarrow\)</span> pas d’émissions indirectes</p></section>
+<section id="coûts-dabattement-du-carbone" class="slide level2">
+<h2>Coûts d’abattement du carbone</h2>
+<p><img data-src="graph/mckinzey_abat.jpg" alt="Source: McKinzey and Company, “Pathways to a Low-Carbon Economy”, 2010"> Le secteur résidentiel présente plusieurs pistes prioritaires à coût faible/négatif</p>
+</section>
+<section id="potentiel-dabattement-pour-le-bâtiment" class="slide level2">
+<h2>Potentiel d’abattement pour le bâtiment</h2>
+<p>Le potentiel mondial au niveau mondial selon le GIEC (2022):</p>
+<blockquote>
+<p>Jusqu’à 2050, […] <strong>61% (8.2 GtCO2)</strong> des émissions des bâtiments peuvent être atténuées. Les politiques de suffisance qui évitent la demande d’énergie et de matériaux contribuent à hauteur de 10 % à ce potentiel, <strong>les politiques d’efficacité énergétique à hauteur de 42 %</strong> et les politiques d’énergies renouvelables à hauteur de 9 %.</p>
+</blockquote>
+</section>
+<section id="potentiel-dabattement-pour-le-bâtiment-1" class="slide level2">
+<h2>Potentiel d’abattement pour le bâtiment</h2>
+<p>Bâtiment neuf vs.&nbsp;ancien, encore selon le GIEC (2022) :</p>
+<blockquote>
+<p>La plus grande part du potentiel d’atténuation des <em>nouveaux bâtiments</em> est disponible dans les pays en développement, tandis que dans les pays développés, le potentiel d’atténuation le plus élevé réside dans la <strong>rénovation des bâtiments existants</strong>.</p>
+</blockquote>
+<p><span class="math inline">\(\Rightarrow\)</span> <span style="color: blue;">rénovation</span> est l’enjeu essentiel pour la France</p>
+</section>
+<section id="usages-énergie-résidentiel-france" class="slide level2">
+<h2>Usages énergie – résidentiel, France</h2>
+
+<img data-src="graph/pie_crop.jpg" style="width:70.0%" class="r-stretch"><p><span style="color: blue;">Chauffage</span> est l’usage du premier ordre <span class="math inline">\(\Rightarrow\)</span> la rénovation cible l’efficacité du système de chauffage &amp; la performance thermique</p>
+</section></section>
+<section>
+<section id="efficacité-énegétique-rénovation" class="title-slide slide level1 center">
+<h1>Efficacité énegétique &amp; rénovation</h1>
+
+</section>
+<section id="définition-formalisation-ee" class="slide level2">
+<h2>Définition &amp; formalisation EE</h2>
+<dl>
+<dt><span style="color :blue;">Efficacité<sup>1</sup> énergétique (EE)</span></dt>
+<dd>
+<p>Quantité de service énergétique produite par unité d’énergie utilisée.</p>
+</dd>
+</dl>
+<p>Formalisation:</p>
+<ul>
+<li>un équipement (e.g.&nbsp;une chaudière) génère un service énergétique (e.g.&nbsp;hausse de température d’air) de quantité <span style="color: blue;"><span class="math inline">\(s\)</span></span></li>
+<li>énergie utilisé pour atteindre <span style="color: blue;"><span class="math inline">\(s\)</span></span> est <span style="color: blue;"><span class="math inline">\(E\)</span></span> (kWh)</li>
+</ul>
+<p><span class="math inline">\(\Rightarrow\)</span> efficacité énergétique est <span style="color: blue;"><span class="math inline">\(\alpha = \frac{s}{E}\)</span></span></p>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>le terme <em>efficience</em> est plus correct, mais moins utilisé</p></li></ol></aside></section>
+<section id="sufficiency-efficiency-renewables-dans-le-résidentiel" class="slide level2">
+<h2>Sufficiency, Efficiency, Renewables dans le résidentiel</h2>
+<div class="quarto-layout-panel" data-layout="[60, 40]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 60.0%;justify-content: flex-start;">
+<p><span class="math inline">\(\text{CO}_2 = \text{Pop} \times\)</span> <span style="color: red;"><span class="math inline">\(\frac{m^2}{\text{Pop}}\)</span></span> <span class="math inline">\(\times\)</span> <span style="color: gold;"><span class="math inline">\(\frac{E}{m^2}\)</span></span> <span class="math inline">\(\times\)</span> <span style="color: green;"><span class="math inline">\(\frac {\text{CO}_2}{E}\)</span></span></p>
+<ul>
+<li>Pop – population</li>
+<li><span class="math inline">\(\frac{m^2}{\text{Pop}} \to\)</span> <span style="color: red;">Sufficiency</span></li>
+<li><span class="math inline">\(\frac{E}{m^2} \to\)</span> <span style="color: gold;">Efficiency</span></li>
+<li><span class="math inline">\(\frac{\text{CO}_2}{E} \to\)</span> <em>facteur d’émission</em>, <span class="math inline">\(\to\)</span> energy mix, y.c. <span style="color: green;">Renewables</span></li>
+</ul>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 40.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="graph/saheb_ser_framework.png"></p>
+<figcaption>SER appliqué au résidentiel</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="efficacité-emissions-diagnostic-de-performance-énergetique-dpe" class="slide level2">
+<h2>Efficacité, emissions : Diagnostic de Performance Énergetique (DPE)</h2>
+<div class="quarto-layout-panel" data-layout="[50, 50]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="graph/DPE_VISUEL_DPE_730x400_crop.jpg"></p>
+<figcaption>Barème DPE depuis 2021</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="graph/DPE_repart.png"></p>
+<figcaption>Répartition du parc, 2023</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="évaluation-projet-rénovation" class="slide level2">
+<h2>Évaluation projet rénovation</h2>
+<p>Rénovation est un projet d’investissement</p>
+<ul>
+<li class="fragment">investissement en <span class="math inline">\(t = 0\)</span> <span class="math inline">\(\to\)</span> économies qui persistent : <span class="math inline">\(t = 0, 1, 2... T\)</span></li>
+<li class="fragment">Une rénovation augmente l’efficacité <span class="math inline">\(\alpha\)</span> <span class="math inline">\(\to\)</span> économies d’énergie <span class="math inline">\(=-\Delta E_t(\alpha)\)</span> en période <span class="math inline">\(t\)</span></li>
+<li class="fragment"><span class="math inline">\(\Rightarrow\)</span> gain monétaire <span class="math inline">\(-p_t \Delta E_t(\alpha)\)</span></li>
+<li class="fragment">Les gain <strong>cum</strong>ulé <strong>ac</strong>tualisé (<strong>cumac</strong>) est <span class="math inline">\(\sum_{t=0}^T \frac{-p_t \Delta E_t(\alpha)}{(1+i)^t}\)</span>
+<ul>
+<li class="fragment"><span class="math inline">\(i\)</span> est le taux d’intérêt</li>
+</ul></li>
+</ul>
+</section>
+<section id="évaluation-projet-rénovation-la-van" class="slide level2">
+<h2>Évaluation projet rénovation : la VAN</h2>
+<p>Pour décider sur l’investissement, les gains <strong>cumac</strong> sont à comparer au coût de la rénovation <span class="math inline">\(C(\alpha)\)</span></p>
+<div class="fragment">
+<p>La <span style="color: blue;">valeur actualisée nette (VAN)</span> de notre projet qui porte l’EE au niveau <span class="math inline">\(\alpha\)</span> :</p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[VAN(\alpha) =  \sum_{t=0}^T \frac{- p_t \Delta E_t(\alpha)}{(1+i)^t} - C(\alpha)\]</span></p>
+</div>
+<div class="fragment">
+<p>Une barrière majeure à l’investissement est la mesure des <span class="math inline">\(\Delta E_t(\alpha)\)</span> : mesure rarement faite <em>ex post</em>, fiabilité limitée de la modélisation <em>ex ante</em></p>
+</div>
+</section></section>
+<section>
+<section id="écart-économies-estimés-vs.-économies-réalisés" class="title-slide slide level1 center">
+<h1>Écart économies estimés vs.&nbsp;économies réalisés</h1>
+
+</section>
+<section id="effet-rebond-définition-typologie" class="slide level2">
+<h2>Effet rebond : définition, typologie</h2>
+<dl>
+<dt><span style="color: blue;">Effet rebond</span></dt>
+<dd>
+<p>L’augmentation de la consommation d’énergie suite à l’amélioration de l’efficacité énergétique</p>
+</dd>
+</dl>
+<p>Peut exister sur plusieurs niveaux :</p>
+<ol type="1">
+<li class="fragment">Effet de rebond <strong>direct</strong> : <span class="math inline">\(\alpha \uparrow\)</span> <span class="math inline">\(\Rightarrow\)</span> service énergétique du même équipement <span class="math inline">\(\uparrow\)</span></li>
+<li class="fragment">Effet de rebond <strong>par substitution</strong> : <span class="math inline">\(\alpha \Rightarrow\)</span> économies monétaires <span class="math inline">\(\Rightarrow\)</span> consommation d’autres services d’énergie <span class="math inline">\(\uparrow\)</span></li>
+<li class="fragment">Effet de rebond <strong>macro</strong> : EE améliore les processes de production <span class="math inline">\(\Rightarrow\)</span> production équipements énergivores <span class="math inline">\(\uparrow\)</span></li>
+</ol>
+</section>
+<section id="effet-rebond-modèle-micro" class="slide level2">
+<h2>Effet rebond : modèle micro</h2>
+<ul>
+<li class="fragment">Un ménage a une utilité quasi-linaire :
+<ul>
+<li class="fragment">U <span class="math inline">\(=\)</span> utilité du service énergetique <span class="math inline">\(s\)</span> moins dépense monétaire<sup>1</sup></li>
+</ul></li>
+<li class="fragment">forme fonctionnelle :
+<ul>
+<li class="fragment">utilité du <span class="math inline">\(s\)</span> : <span class="math inline">\(\bar u-(s - \bar s)^2\)</span>, où <span class="math inline">\(\bar u, \bar s &gt;0\)</span> constantes</li>
+<li class="fragment">argent dépensé : prix énergie <span class="math inline">\(\times\)</span> quantité énergie : <span class="math inline">\(p E\)</span></li>
+<li class="fragment">lien entre efficacité et qté énergie : <span class="math inline">\(\alpha = \frac{s}{E} \Leftrightarrow E = \frac{1}{\alpha} s\)</span></li>
+</ul></li>
+<li class="fragment"><strong>Fonction d’utilité finale :</strong> <span class="math inline">\(U(s, \alpha) = \bar u-(s - \bar s)^2 - \frac{p}{\alpha} s\)</span></li>
+</ul>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>par construction, 1 unité d’utilité = 1 unité monétaire</p></li></ol></aside></section>
+<section id="solution-du-modèle" class="slide level2">
+<h2>Solution du modèle</h2>
+<p>Dérivée de la fonction égale à zéro :</p>
+<p><span class="math display">\[\frac{\partial U(s, \alpha)}{\partial s} = 0 \Rightarrow -2(s - \bar s) - \frac{p}{\alpha} = 0\]</span> <span class="math inline">\(\Rightarrow s = \bar s - \frac{p}{2 \alpha}\)</span>, <span class="math inline">\(\Rightarrow s \uparrow\)</span> quand <span class="math inline">\(\alpha \uparrow\)</span> (vérifiez ça)</p>
+<p><span class="math inline">\(E = \frac{s}{\alpha} = \frac{\bar s}{\alpha} - \frac{p}{2 \alpha^2} = \frac{2 \bar s \alpha - p}{2 \alpha^2}\)</span> – influence sur <span class="math inline">\(E\)</span> ambigüe</p>
+</section>
+<section id="effet-rebond-un-mal-absolu" class="slide level2">
+<h2>Effet rebond – un mal absolu ?</h2>
+<p>L’effet rebond peut attenuer les économies d’énergie réalisées</p>
+<p>Une nuisance pour l’étude des économies d’énergie <span class="math inline">\(\Rightarrow\)</span> de la VAN de l’investissement</p>
+<p><span class="math inline">\(\to\)</span> une des raisons de <span style="color: blue;"><em>energy efficiency gap</em></span> : l’écart entre économies d’énergie prédites et celles observées<sup>1</sup></p>
+<div class="fragment">
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Warning</strong></p>
+</div>
+<div class="callout-content">
+<p>Le <em>confort</em> est la raison d’utilisation d’un équipement <span class="math inline">\(\Rightarrow\)</span> effet rebond <strong>pas indésirable en soi</strong>, même si économies d’énergie diminuent</p>
+</div>
+</div>
+</div>
+</div>
+<aside><ol class="aside-footnotes"><li id="fn3"><p>on observe pas réellement les économies, car il faut imaginer ce qui ce passerait en l’absence de la rénovation</p></li></ol></aside></section>
+<section id="asymmetries-informationnelles-autour-de-la-rénovation" class="slide level2">
+<h2>Asymmetries informationnelles autour de la rénovation</h2>
+<p>La rénovation concerne au moins 2 acteurs : le ménage et l’artisan</p>
+<div class="fragment">
+<p>Souvent, beaucoup plus de parties :</p>
+<div class="increment">
+<ul>
+<li>propriétaire &amp; locataire</li>
+<li>diagnostiqueur (e.g.&nbsp;DPE)</li>
+<li>banque</li>
+<li>pouvoirs publics</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="aléa-moral" class="slide level2">
+<h2>Aléa moral</h2>
+<p><span style="color: blue;">Aléa moral</span> : une situation d’asymétrie d’information où une partie n’observe pas parfaitement les actions entreprises par l’autre partie</p>
+<ul>
+<li><strong>Ménage vs.&nbsp;artisan</strong> : travaux à l’intérieur des constructions/appareils : pose d’isolant, réglage pompe à chaleur
+<ul>
+<li>remède : certification des artisans (e.g.&nbsp;label RGE en France)</li>
+</ul></li>
+<li><strong>Propriétaire vs.&nbsp;locataire</strong> : si tarif énergie est fixe, aucune incitation à diminuer la consommation</li>
+</ul>
+</section></section>
+<section>
+<section id="étude-de-cas-energy-efficiency-gap-en-illinois" class="title-slide slide level1 center">
+<h1>Étude de cas : energy efficiency gap en Illinois</h1>
+<blockquote>
+<p>P. Christensen, P. Francisco, E. Myers, M. Souza; Decomposing the Wedge between Projected and Realized Returns in Energy Efficiency Programs. The Review of Economics and Statistics 2023</p>
+</blockquote>
+</section>
+<section id="questions-posées" class="slide level2">
+<h2>Questions posées</h2>
+<ul>
+<li>Qu’est-ce qui explique <span style="color: blue;"><em>energy efficiency gap</em></span> des rénovations subventionnées par l’État ?</li>
+<li>Quelles sont les VAN des différentes rénovations réalisées ?</li>
+</ul>
+</section>
+<section id="contexte-données" class="slide level2">
+<h2>Contexte, données</h2>
+<ul>
+<li class="fragment">~70,000 rénovations subventionnées par <em>Weatherization Assistance Program (WAP)</em> en Illinois (hivers froids <span class="emoji" data-emoji="snowman">⛄</span>)</li>
+<li class="fragment">données abondantes sur le ménage bénéficiaire, le logement, l’artisan, le diagnostic</li>
+<li class="fragment">consommation mensuelle de l’électricité et de gaz</li>
+<li class="fragment">accès au <strong>modèle technique utilisé par les autorités pour la décision de subvention</strong>
+<ul>
+<li class="fragment">calcul des économies <em>ex ante</em> du modèle vs.&nbsp;estimation <em>ex post</em></li>
+</ul></li>
+</ul>
+</section>
+<section id="méthodes" class="slide level2">
+<h2>Méthodes</h2>
+<p>Approche <em>machine learning</em> pour prédire la consommation (théorique) en absence de rénovation <span class="math inline">\(\Rightarrow\)</span> estimation des économies “réelles”, à comparer aux…</p>
+<div class="fragment">
+<p>…économies telles que prédites par le modèle technique (<em>engineering model</em>). <strong>L’écart</strong> entre les deux est calculé et <strong>décomposé</strong> en :</p>
+</div>
+<div class="fragment">
+<ol type="1">
+<li>Biais systématique du modèle technique pour certains gestes</li>
+<li>Sur-estimation de la qualité de l’artisanat (&amp; aléa moral)</li>
+<li>Effet rebond</li>
+</ol>
+</div>
+</section>
+<section id="résultats-energy-efficiency-gap-en-moyenne" class="slide level2">
+<h2>Résultats : energy efficiency gap en moyenne</h2>
+<p>Économies prédites par modèle technique : 29% ; économies estimées (“réelles”) : 15%, donc</p>
+<p><span class="math inline">\(\frac{\text{économies modèle}-\text{économies réelles}}{\text{économies modèles}} = 49\%\)</span> , dont :</p>
+<ul>
+<li class="fragment">21% – biais du modèle technique</li>
+<li class="fragment">20% – qualité de l’artisanat</li>
+<li class="fragment">3% (seulement !) – effet rebond</li>
+</ul>
+</section>
+<section id="résultats-biais-du-modèle-technique" class="slide level2">
+<h2>Résultats : biais du modèle technique</h2>
+<p>L’effet de l’isolation des mûrs (typiquement classée prioritaire, après les combles) est très sur-estimé</p>
+<ul>
+<li>Les rénovations qui incluent ce type de geste ont un écart plus grand de 13 points de pourcentage minimum (rappel: l’écart moyen est ~50%)</li>
+</ul>
+<p>Un biais plus modeste, mais significatif, pour remplacement des fenêtres</p>
+</section>
+<section id="résultats-qualité-de-lartisanat" class="slide level2">
+<h2>Résultats : qualité de l’artisanat</h2>
+<p>Un artisan donné est suivi de chantier en chantier pour identifier la qualité de son travail (indépendante des spécificités de chaque bâtiment)</p>
+<div class="fragment">
+<p>Question : que se passerait-il au <em>energy efficient gap</em> si tous les artisans aurait la qualité des travaux au niveau des meilleurs 5% de l’échantillon ?</p>
+</div>
+<div class="fragment">
+<p>Réponse : il diminuerait de 49% à 29%</p>
+</div>
+</section>
+<section id="rappel-formule-van" class="slide level2">
+<h2>Rappel formule VAN</h2>
+<p><span class="math display">\[VAN(\alpha) =  \sum_{t=0}^T \frac{-\Delta_t(\alpha)}{(1+i)^t} - C(\alpha)\]</span> La <span style="color: blue;">valeur actuelle nette (VAN)</span> estimée pour chaque logement séparément</p>
+</section>
+<section id="résultats-les-van-très-hétérogènes" class="slide level2">
+<h2>Résultats : les VAN très hétérogènes</h2>
+<div class="quarto-layout-panel" data-layout="[40, 60]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 40.0%;justify-content: flex-start;">
+<ul>
+<li>Les logements triés par VAN</li>
+<li><span class="math inline">\(\sim\)</span> courbe d’attenuation par secteur (cf graphique McKinsey)</li>
+</ul>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 60.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="graph/home_heterogen_Myers.png"></p>
+<figcaption>Bénéfice net par logement de l’échantillon (Christensen et al., 2023)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="étude-de-cas-problèmes-de-mesure-du-dpe" class="title-slide slide level1 center">
+<h1>Étude de cas : problèmes de mesure du DPE</h1>
+
+</section>
+<section id="dpe-entre-incertitude-et-manipulation" class="slide level2">
+<h2>DPE : entre incertitude et manipulation</h2>
+<p>Le DPE ne repose pas sur des données de consommation, mais sur un modèle ingénieur 3CL (à partir de 2021)</p>
+<div class="fragment">
+<p>Ces hypothèses comportementales sont très simplifiées : La température intérieure “de confort” est supposée 18°C en hiver et 28°C</p>
+</div>
+<div class="fragment">
+<p><strong>Pourquoi ne pas se baser sur des factures de consommation passée pour les bâtiments anciens ?</strong></p>
+</div>
+</section>
+<section id="manipulation-des-dpe-avant-2021" class="slide level2">
+<h2>Manipulation des DPE, avant 2021</h2>
+
+<img data-src="graph/DPE_facture_avant_2021.png" class="r-stretch quarto-figure-center"><p class="caption">Consommation conventionnelle en kWh/m2 et le label DPE. Méthode facture.</p><p>Aja et al (2024) estiment la part des DPE manipulés à 4 %</p>
+</section>
+<section id="manipulation-des-dpe-après-2021" class="slide level2">
+<h2>Manipulation des DPE, après 2021</h2>
+
+<img data-src="graph/DPE_3CL_apres_2021.png" class="r-stretch quarto-figure-center"><p class="caption">Consommation conventionnelle en kWh/m2 et le label DPE. Méthode 3CL.</p><p>La part des DPE manipulés passe à 1.7 % (moins que la moitié d’avant-2021)</p>
+</section>
+<section id="consommation-conventionnelle-vs-consommation-réelle" class="slide level2">
+<h2>Consommation conventionnelle vs consommation réelle</h2>
+<p>Astier et al (2024) ont utilisé des données de Crédit Mutuelle appariées aux DPE des ménages</p>
+<ul>
+<li>comparison les dépenses sur l’énergie contre la consommation conventionnelle</li>
+<li>analyse de régression permet d’isoler les facteurs sociodémographiques (tels que revenu) des caractéristiques du bâtiment</li>
+</ul>
+<div class="fragment">
+<p><strong>Résultat : la variation de la consommation entre labels est largement sur-estimée par 3CL</strong></p>
+</div>
+</section>
+<section id="dpe-et-consommation-données-vs.-modèle" class="slide level2">
+<h2>DPE et consommation : données vs.&nbsp;modèle</h2>
+
+<img data-src="graph/DPE_reel_3CL.png" class="r-stretch quarto-figure-center"><p class="caption">Consommation estimée vs.&nbsp;modélisée</p><p>Écart entre A et G : 560 % dans 3CL, 86 % dans les données</p>
+</section>
+<section id="problèmes-de-modélisation" class="slide level2">
+<h2>Problèmes de modélisation</h2>
+<p><span style="color: blue;">Effet rebond</span> pas pris en compte par le modèle 3CL</p>
+<div class="fragment">
+<p>A partir du juillet 2024, modification des paramètres 3CL qui sont reconnus étant pénalisant pour les petits logements</p>
+</div>
+<div class="fragment">
+<p>Besoin d’études empiriques supplémentaires, rendues possibles par les nouvelles données sur la consommation (telles que produites par le SDES, l’agence ORE et disponibles pour les chercheurs)</p>
+</div>
+</section></section>
+<section>
+<section id="conclusion" class="title-slide slide level1 center">
+<h1>Conclusion</h1>
+
+</section>
+<section id="leçons" class="slide level2">
+<h2>Leçons</h2>
+<ul>
+<li class="fragment">Place importante du résidentiel dans l’atténuation des émissions GES</li>
+<li class="fragment">Investissement dans <strong>efficacité énergétique</strong> est l’approche le plus efficace</li>
+<li class="fragment">Parc résidentiel <strong>existant</strong> doit être <strong>rénové</strong></li>
+<li class="fragment">Pourtant, les bénéfices (<strong>VAN</strong>) de la rénovation difficile à prédire : <em>Energy efficiency gap</em></li>
+<li class="fragment">Raisons : biais des modèles techniques, <strong>aléa moral</strong> et de <strong>l’effet rebond</strong></li>
+<li class="fragment">Beaucoup de boulot pour les ingénieurs et les économistes</li>
+</ul>
+</section>
+<section id="merci-de-votre-attention" class="slide level2">
+<h2>Merci de votre attention !</h2>
+<p><a href="mailto:ilya.eryzhenskiy@ipp.eu" class="email">ilya.eryzhenskiy@ipp.eu</a></p>
+
+</section></section>
+
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="Eff_ener_bati_Eryzhenskiy_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="Eff_ener_bati_Eryzhenskiy_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="Eff_ener_bati_Eryzhenskiy_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="Eff_ener_bati_Eryzhenskiy_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="Eff_ener_bati_Eryzhenskiy_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="Eff_ener_bati_Eryzhenskiy_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="Eff_ener_bati_Eryzhenskiy_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="Eff_ener_bati_Eryzhenskiy_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="Eff_ener_bati_Eryzhenskiy_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="Eff_ener_bati_Eryzhenskiy_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="Eff_ener_bati_Eryzhenskiy_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

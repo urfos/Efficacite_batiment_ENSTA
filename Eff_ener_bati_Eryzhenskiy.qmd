@@ -1,0 +1,443 @@
+---
+title: "Efficacité énergétique & bâtiment"
+author: "Ilya Eryzhenskiy, Institut des politiques publiques"
+from: markdown+emoji
+format: 
+  revealjs:
+    chalkboard: true
+  html:
+    embed-resources: true
+editor: source
+---
+
+## Scope du cours
+
+Aspects **économiques** du sujet de l'[efficacité énergétique]{style="color: blue;"} appliqué au secteur du [logement]{style="color: blue;"} :
+
+:::{.incremental}
+
+- comportement des ménages
+- difficultés d'évaluation d'un projet de rénovation 
+
+:::
+
+. . . 
+
+...et pas (ou très peu) les questions **techniques** au cœur du sujet :
+
+:::{.incremental}
+
+- technologies
+- matériaux
+
+:::
+
+
+# Énergie, émissions : la place le secteur bâtiment/résidentiel 
+
+## Consommation par secteur, monde
+
+::: {layout="[50, 50]"}
+::: {#first-column}
+![Consommation électricité](graph/share-of-electricity-final-consumption-by-sector-2019.png)
+:::
+
+::: {#second-column}
+![Consommation gaz naturel](graph/share-of-natural-gas-final-consumption-by-sector-2019.png)
+:::
+:::
+Données : International Energy Agency, 2019
+
+## Consommation par secteur -- France
+
+![En France, part résidentiel > part industrie ; part résidentiel monte pendant COVID](graph/ener_sect_1122_France.png){width="85%"}
+
+
+## Énergies consommées, résidentiel
+
+![](graph/consommation-finale-energie-residentiel-cgdd.svg){width="60%"}
+
+Part croissante de l'électricité, mais pétrole + gaz \~50% en 2021
+
+## Emissions -- secteur, région 
+
+![**ATTENTION** que la consommation finale du secteur $\Rightarrow$ pas d'émissions indirectes](graph/origine-emissions-CO2-CGDD-3.svg)
+
+
+<!-- ## Leviers d'action : cadre SER de Négawatt -->
+
+<!-- ::: {layout="[50, 50]"} -->
+<!-- <div> -->
+
+<!-- *Sufficiency*, **Efficiency**, *Renewables* : -->
+
+<!-- -   *Sufficiency* $\sim$ sobriété -->
+<!-- -   *Efficiency* -- notre sujet aujourd'hui -->
+<!-- -   *Renewables* -->
+
+<!-- </div> -->
+
+<!-- <div> -->
+
+<!-- ![Source : Saheb (2021)](graph/IPCC_AR6_WGIII_Box_9_1_Figure_1.png){width="80%"} -->
+
+<!-- </div> -->
+<!-- ::: -->
+
+
+
+## Coûts d'abattement du carbone
+
+![Source: McKinzey and Company, “Pathways to a Low-Carbon Economy”, 2010](graph/mckinzey_abat.jpg)
+Le secteur résidentiel présente plusieurs pistes prioritaires à coût faible/négatif
+
+## Potentiel d'abattement pour le bâtiment
+
+Le potentiel mondial au niveau mondial selon le GIEC (2022):
+
+> Jusqu'à 2050, \[...\] **61% (8.2 GtCO2)** des émissions des bâtiments peuvent être atténuées. Les politiques de suffisance qui évitent la demande d’énergie et de matériaux contribuent à hauteur de 10 % à ce potentiel, **les politiques d’efficacité énergétique à hauteur de 42 %** et les politiques d’énergies renouvelables à hauteur de 9 %.
+
+## Potentiel d'abattement pour le bâtiment
+
+Bâtiment neuf vs. ancien, encore selon le GIEC (2022) :
+
+> La plus grande part du potentiel d'atténuation des *nouveaux bâtiments* est disponible dans les pays en développement, tandis que dans les pays développés, le potentiel d'atténuation le plus élevé réside dans la **rénovation des bâtiments existants**.
+
+$\Rightarrow$ [rénovation]{style="color: blue;"} est l'enjeu essentiel pour la France
+
+## Usages énergie -- résidentiel, France
+
+![](graph/pie_crop.jpg){width="70%"}
+
+[Chauffage]{style="color: blue;"} est l'usage du premier ordre $\Rightarrow$ la rénovation cible l'efficacité du système de chauffage & la performance thermique 
+
+
+
+
+# Efficacité énegétique & rénovation 
+
+## Définition & formalisation EE
+
+[Efficacité^[le terme *efficience* est plus correct, mais moins utilisé] énergétique (EE)]{style="color :blue;"}
+
+:   Quantité de service énergétique produite par unité d'énergie utilisée.
+
+Formalisation:
+
+-   un équipement (e.g. une chaudière) génère un service énergétique (e.g. hausse de température d'air) de quantité [$s$]{style="color: blue;"}
+-   énergie utilisé pour atteindre [$s$]{style="color: blue;"} est [$E$]{style="color: blue;"} (kWh)
+
+$\Rightarrow$ efficacité énergétique est [$\alpha = \frac{s}{E}$]{style="color: blue;"}
+
+## Sufficiency, Efficiency, Renewables dans le résidentiel
+
+::: {layout="[60, 40]"}
+
+<div>
+
+$\text{CO}_2 = \text{Pop} \times$ [$\frac{m^2}{\text{Pop}}$]{style="color: red;"} $\times$ [$\frac{E}{m^2}$]{style="color: gold;"} $\times$ [$\frac {\text{CO}_2}{E}$]{style="color: green;"}
+
+- Pop -- population
+- $\frac{m^2}{\text{Pop}} \to$ [Sufficiency]{style="color: red;"}
+- $\frac{E}{m^2} \to$ [Efficiency]{style="color: gold;"}
+- $\frac{\text{CO}_2}{E} \to$ *facteur d'émission*, $\to$ energy mix, y.c. [Renewables]{style="color: green;"}
+
+</div>
+
+<div>
+![SER appliqué au résidentiel](graph/saheb_ser_framework.png)
+</div>
+
+:::
+
+## Efficacité, emissions : Diagnostic de Performance Énergetique (DPE)
+
+::: {layout="[50, 50]"}
+<div>
+
+![Barème DPE depuis 2021](graph/DPE_VISUEL_DPE_730x400_crop.jpg)
+
+</div>
+
+<div>
+
+![Répartition du parc, 2023](graph/DPE_repart.png)
+
+</div>
+:::
+
+## Évaluation projet rénovation
+
+Rénovation est un projet d'investissement
+
+::: {.incremental}
+
+- investissement en $t = 0$ $\to$ économies qui persistent : $t = 0, 1, 2... T$
+- Une rénovation augmente l'efficacité $\alpha$ $\to$ économies d'énergie $=-\Delta E_t(\alpha)$ en période $t$ 
+- $\Rightarrow$ gain monétaire $-p_t \Delta E_t(\alpha)$ 
+- Les gain **cum**ulé **ac**tualisé (**cumac**) est $\sum_{t=0}^T \frac{-p_t \Delta E_t(\alpha)}{(1+i)^t}$
+  - $i$ est le taux d'intérêt
+
+:::
+
+
+## Évaluation projet rénovation : la VAN
+
+
+Pour décider sur l'investissement, les gains **cumac** sont à comparer au coût de la rénovation $C(\alpha)$
+
+. . . 
+
+La [valeur actualisée nette (VAN)]{style="color: blue;"} de notre projet qui porte l'EE au niveau $\alpha$ : 
+
+. . . 
+
+$$VAN(\alpha) =  \sum_{t=0}^T \frac{- p_t \Delta E_t(\alpha)}{(1+i)^t} - C(\alpha)$$
+
+. . .
+
+Une barrière majeure à l'investissement est la mesure des $\Delta E_t(\alpha)$ : mesure rarement faite *ex post*, fiabilité limitée de la modélisation *ex ante*
+
+# Écart économies estimés vs. économies réalisés
+
+## Effet rebond : définition, typologie
+
+[Effet rebond]{style="color: blue;"}
+
+:   L'augmentation de la consommation d'énergie suite à l'amélioration de l'efficacité énergétique
+
+Peut exister sur plusieurs niveaux :
+
+::: incremental
+1.  Effet de rebond **direct** : $\alpha \uparrow$ $\Rightarrow$ service énergétique du même équipement $\uparrow$
+2.  Effet de rebond **par substitution** : $\alpha \Rightarrow$ économies monétaires $\Rightarrow$ consommation d'autres services d'énergie $\uparrow$
+3.  Effet de rebond **macro** : EE améliore les processes de production $\Rightarrow$ production équipements énergivores $\uparrow$
+:::
+
+## Effet rebond : modèle micro
+
+::: incremental
+-   Un ménage a une utilité quasi-linaire :
+    -   U $=$ utilité du service énergetique $s$ moins dépense monétaire^[par construction, 1 unité d'utilité = 1 unité monétaire]
+-   forme fonctionnelle :
+    -   utilité du $s$ : $\bar u-(s - \bar s)^2$, où $\bar u, \bar s >0$ constantes
+    -   argent dépensé : prix énergie $\times$ quantité énergie : $p E$
+    -   lien entre efficacité et qté énergie : $\alpha = \frac{s}{E} \Leftrightarrow E = \frac{1}{\alpha} s$
+-   **Fonction d'utilité finale :** $U(s, \alpha) = \bar u-(s - \bar s)^2 - \frac{p}{\alpha} s$
+:::
+
+## Solution du modèle
+
+Dérivée de la fonction égale à zéro :
+
+$$\frac{\partial U(s, \alpha)}{\partial s} = 0 \Rightarrow -2(s - \bar s) - \frac{p}{\alpha} = 0$$
+$\Rightarrow s = \bar s - \frac{p}{2 \alpha}$, $\Rightarrow s \uparrow$ quand $\alpha \uparrow$ (vérifiez ça)
+
+$E = \frac{s}{\alpha} = \frac{\bar s}{\alpha} - \frac{p}{2 \alpha^2} = \frac{2 \bar s \alpha - p}{2 \alpha^2}$ -- influence sur $E$ ambigüe
+
+## Effet rebond -- un mal absolu ?
+
+L'effet rebond peut attenuer les économies d'énergie réalisées
+
+Une nuisance pour l'étude des économies d'énergie $\Rightarrow$ de la VAN de l'investissement 
+
+$\to$ une des raisons de [*energy efficiency gap*]{style="color: blue;"} : l'écart entre économies d'énergie prédites et celles observées^[on observe pas réellement les économies, car il faut imaginer ce qui ce passerait en l'absence de la rénovation]
+
+. . .
+
+::: callout-warning
+Le *confort* est la raison d'utilisation d'un équipement $\Rightarrow$ effet rebond **pas indésirable en soi**, même si économies d'énergie diminuent
+:::
+
+
+## Asymmetries informationnelles autour de la rénovation
+
+La rénovation concerne au moins 2 acteurs : le ménage et l'artisan
+
+. . . 
+
+Souvent, beaucoup plus de parties : 
+
+::: {.increment}
+
+- propriétaire & locataire 
+- diagnostiqueur (e.g. DPE)
+- banque 
+- pouvoirs publics 
+
+:::
+
+## Aléa moral
+
+[Aléa moral]{style="color: blue;"} :
+une situation d’asymétrie d'information où une partie n'observe pas parfaitement les actions entreprises par l'autre partie
+
+* **Ménage vs. artisan** : travaux à l'intérieur des constructions/appareils : pose d'isolant, réglage pompe à chaleur 
+  * remède : certification des artisans (e.g. label RGE en France) 
+* **Propriétaire vs. locataire** : si tarif énergie est fixe, aucune incitation à diminuer la consommation
+
+
+# Étude de cas : energy efficiency gap en Illinois
+
+> P. Christensen, P. Francisco, E. Myers, M. Souza; Decomposing the Wedge between Projected and Realized Returns in Energy Efficiency Programs. The Review of Economics and Statistics 2023
+
+## Questions posées
+
+-   Qu'est-ce qui explique [*energy efficiency gap*]{style="color: blue;"} des rénovations subventionnées par l'État ?
+-   Quelles sont les VAN des différentes rénovations réalisées ?
+
+## Contexte, données
+
+::: {.incremental}
+
+-   \~70,000 rénovations subventionnées par *Weatherization Assistance Program (WAP)* en Illinois (hivers froids :snowman:)
+-   données abondantes sur le ménage bénéficiaire, le logement, l'artisan, le diagnostic
+-   consommation mensuelle de l'électricité et de gaz
+-   accès au **modèle technique utilisé par les autorités pour la décision de subvention**
+    -   calcul des économies *ex ante* du modèle vs. estimation *ex post*
+    
+:::
+
+## Méthodes
+
+Approche *machine learning* pour prédire la consommation (théorique) en absence de rénovation $\Rightarrow$ estimation des économies "réelles", à comparer aux...
+
+. . .
+
+...économies telles que prédites par le modèle technique (*engineering model*). **L'écart** entre les deux est calculé et **décomposé** en :
+
+. . .
+
+1.  Biais systématique du modèle technique pour certains gestes
+2.  Sur-estimation de la qualité de l'artisanat (& aléa moral)
+3.  Effet rebond
+
+
+## Résultats : energy efficiency gap en moyenne
+
+Économies prédites par modèle technique : 29% ; économies estimées ("réelles") : 15%, donc
+
+$\frac{\text{économies modèle}-\text{économies réelles}}{\text{économies modèles}} = 49\%$ , dont :
+
+::: incremental
+* 21% -- biais du modèle technique
+* 20% -- qualité de l'artisanat
+* 3% (seulement !) -- effet rebond
+:::
+
+## Résultats : biais du modèle technique
+
+L'effet de l'isolation des mûrs (typiquement classée prioritaire, après les combles) est très sur-estimé
+
+* Les rénovations qui incluent ce type de geste ont un écart plus grand de 13 points de pourcentage minimum (rappel: l'écart moyen est ~50%)
+
+Un biais plus modeste, mais significatif, pour remplacement des fenêtres
+
+## Résultats : qualité de l'artisanat
+
+Un artisan donné est suivi de chantier en chantier pour identifier la qualité de son travail (indépendante des spécificités de chaque bâtiment) 
+
+. . . 
+
+Question : que se passerait-il au *energy efficient gap* si tous les artisans aurait la qualité des travaux au niveau des meilleurs 5% de l'échantillon ?
+
+. . .
+
+Réponse : il diminuerait de 49% à 29%
+
+
+## Rappel formule VAN
+
+$$VAN(\alpha) =  \sum_{t=0}^T \frac{-\Delta_t(\alpha)}{(1+i)^t} - C(\alpha)$$
+La [valeur actuelle nette (VAN)]{style="color: blue;"} estimée pour chaque logement séparément
+
+## Résultats : les VAN très hétérogènes
+
+::: {layout="[40, 60]"}
+<div>
+
+-   Les logements triés par VAN
+-   $\sim$ courbe d'attenuation par secteur (cf graphique McKinsey)
+
+</div>
+
+<div>
+
+![Bénéfice net par logement de l'échantillon (Christensen et al., 2023)](graph/home_heterogen_Myers.png)
+
+</div>
+:::
+
+# Étude de cas : problèmes de mesure du DPE
+
+## DPE : entre incertitude et manipulation
+
+Le DPE ne repose pas sur des données de consommation, mais sur un modèle ingénieur 3CL (à partir de 2021) 
+
+. . .
+
+Ces hypothèses comportementales sont très simplifiées : La température intérieure "de confort" est supposée 18°C en hiver et 28°C
+
+. . .
+
+**Pourquoi ne pas se baser sur des factures de consommation passée pour les bâtiments anciens ?**
+
+## Manipulation des DPE, avant 2021
+
+![Consommation conventionnelle en kWh/m2 et le label DPE. Méthode facture.](graph/DPE_facture_avant_2021.png)
+
+Aja et al (2024) estiment la part des DPE manipulés à 4 %
+
+## Manipulation des DPE, après 2021
+
+![Consommation conventionnelle en kWh/m2 et le label DPE. Méthode 3CL.](graph/DPE_3CL_apres_2021.png)
+
+La part des DPE manipulés passe à 1.7 % (moins que la moitié d'avant-2021)
+
+## Consommation conventionnelle vs consommation réelle
+
+Astier et al (2024) ont utilisé des données de Crédit Mutuelle appariées aux DPE des ménages 
+
+* comparison les dépenses sur l'énergie contre la consommation conventionnelle
+* analyse de régression permet d'isoler les facteurs sociodémographiques (tels que revenu) des caractéristiques du bâtiment
+
+. . . 
+
+**Résultat : la variation de la consommation entre labels est largement sur-estimée par 3CL**
+
+## DPE et consommation : données vs. modèle
+
+![Consommation estimée vs. modélisée](graph/DPE_reel_3CL.png)
+
+Écart entre A et G : 560 % dans 3CL, 86 % dans les données 
+
+## Problèmes de modélisation
+
+[Effet rebond]{style="color: blue;"} pas pris en compte par le modèle 3CL
+
+. . .
+
+A partir du juillet 2024, modification des paramètres 3CL qui sont reconnus étant pénalisant pour les petits logements 
+
+. . .
+
+Besoin d'études empiriques supplémentaires, rendues possibles par les nouvelles données sur la consommation (telles que produites par le SDES, l'agence ORE et disponibles pour les chercheurs)
+
+# Conclusion
+
+## Leçons
+
+::: {.incremental}
+
+- Place importante du résidentiel dans l'atténuation des émissions GES
+- Investissement dans **efficacité énergétique** est l'approche le plus efficace
+- Parc résidentiel **existant** doit être **rénové** 
+- Pourtant, les bénéfices (**VAN**) de la rénovation difficile à prédire : *Energy efficiency gap*
+- Raisons : biais des modèles techniques, **aléa moral** et de **l'effet rebond**
+- Beaucoup de boulot pour les ingénieurs et les économistes
+
+:::
+
+##  Merci de votre attention !
+
+<ilya.eryzhenskiy@ipp.eu>

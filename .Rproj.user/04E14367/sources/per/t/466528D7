@@ -1,0 +1,31 @@
+{
+    "id": "466528D7",
+    "path": "~/teaching/EE_ENSTA_Ilya/Eff_ener_bati_Eryzhenskiy.qmd",
+    "project_path": "Eff_ener_bati_Eryzhenskiy.qmd",
+    "type": "quarto_markdown",
+    "hash": "3887167112",
+    "contents": "",
+    "dirty": false,
+    "created": 1744657480009.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "rmdVisualMode": "false",
+        "source_window_id": "",
+        "Source": "Source",
+        "marks": "<:175,0\n>:175,0\nm:198,74\nl:198,74",
+        "cursorPosition": "10,3",
+        "scrollLine": "0",
+        "rmdVisualCollapsedChunks": "",
+        "rmdVisualModeLocation": "2:0",
+        "quartoPreviewFormat": "revealjs"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1744659046,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1744659046942,
+    "read_only": false,
+    "read_only_alternatives": []
+}
